@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Query, UseGuards } from '@nestjs/common';
 import { PortfolioService } from './portfolios.service';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 import { User } from '../users/users.decorator';
@@ -25,8 +25,8 @@ export class PortfolioController {
 
     @UseGuards(JwtAuthGuard)
     @Delete('portfolio/:portfolioId')
-    async deletePortfolio(@Param('portfolioId') portfolioId: number) {
-        const result = await this.portfolioService.deletePortfolio(portfolioId);
+    async deletePortfolio(@Param('portfolioId', ParseIntPipe) portfolioId: number, @User('id') userId: number) {
+        const result = await this.portfolioService.deletePortfolio(portfolioId, userId);
         return { msg: `${result.affected} deleted` };
     }
 

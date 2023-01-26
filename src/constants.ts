@@ -7,3 +7,8 @@ export enum DBRepositories {
 export enum DataSourceProvider {
     dataSource = 'DATA_SOURCE',
 }
+
+export enum PostgresErrorCodes {
+    DuplicateCode = '23505',
+    ForeignKeyMismatch = '23503',
+}

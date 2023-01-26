@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "e78b4506-efc7-43ba-9503-9c44278de07c",
+		"name": "Portfolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user[email]",
+									"value": "umba2@civi.com",
+									"type": "default"
+								},
+								{
+									"key": "user[password]",
+									"value": "12341234",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVtYmFAY2l2aS5jb20iLCJzdWIiOjYsImlhdCI6MTY3NDQxMDg2NiwiZXhwIjoxNjc0NDEwOTI2fQ.rnMEILnowDJ4L8EOtAg9g-t8-emKMy3iaWQ4ps1tiws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "umba2@civi.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "12341234",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"item": [
+				{
+					"name": "Create Portfolio 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "portfolio[name]",
+									"value": "Portfolio 1",
+									"type": "default"
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/portfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Portfolio 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "portfolio[name]",
+									"value": "Portfolio 3",
+									"type": "default"
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 3",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/portfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Portfolio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "Portfolio 1",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/portfolio/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "Portfolio 1",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/portfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Add Image 1 Portfolio 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "image[name]",
+									"value": "Image 3",
+									"type": "default"
+								},
+								{
+									"key": "image[description]",
+									"value": "Description 3",
+									"type": "default"
+								},
+								{
+									"key": "image[portfolio]",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "image[imageUrl]",
+									"value": "https://www.programcreek.com/tyddpescript/?api=typesdadorm.TableColumn",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/images",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Image 2 Portfolio 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "image[name]",
+									"value": "Image 2",
+									"type": "default"
+								},
+								{
+									"key": "image[description]",
+									"value": "Description 2",
+									"type": "default"
+								},
+								{
+									"key": "image[portfolio]",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "image[imageUrl]",
+									"value": "https://www.prograssssmcreek.com/tyddpescript/?api=typesdadorm.TableColumns",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/images",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Image 3 Portfolio 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "image[name]",
+									"value": "Image 3",
+									"type": "default"
+								},
+								{
+									"key": "image[description]",
+									"value": "Description 3",
+									"type": "default"
+								},
+								{
+									"key": "image[portfolio]",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "image[imageUrl]",
+									"value": "https://www.programcreek.com/tyddpescript/?api=typesdadorm.TableColumn",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/images",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "Portfolio 1",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/images/1a5/25",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images",
+								"1a5",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Feed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "Portfolio 1",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "portfolio[description]",
+									"value": "Description 1",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/images/feed",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"images",
+								"feed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bearer",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVtYmFAY2l2aS5jb20iLCJpZCI6NiwiaWF0IjoxNjc0NDcyMjA5LCJleHAiOjE2NzQ0NzU4MDl9.r42p2TTHIhv4EtBwoXBxcV5Y8wX_SU4mEfL5RRcIw4g"
+		}
+	]
+}
